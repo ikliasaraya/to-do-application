@@ -8,6 +8,7 @@ const checkBtn = document.querySelectorAll('.button-check'); // returns node lis
 // Input
 
 const taskInput = document.querySelector(".get-task");
+const filterInput = document.querySelector(".filter-input");
 
 // Containers
 const taskContainer = document.querySelector('.list-container');
@@ -65,6 +66,7 @@ taskContainer.addEventListener("click", deleteTask);
 taskContainer.addEventListener("click", checkTask);
 deleteAllBtn.addEventListener("click", deleteAllTasks);
 addBtn.addEventListener("click", addTask);
+filterInput.addEventListener("keyup", filterTask);
 
 
 // Functions
@@ -97,3 +99,20 @@ function checkTask(e){
         e.target.previousSibling.className = "text-light bg-success form-control";
     }
 };
+
+function filterTask(e){
+    console.log("calistim");
+    let elements = document.querySelectorAll("#list-container input");
+    key = filterInput.value.trim();
+    key.toLowerCase();
+    for(var i=0;i<elements.length;i++){
+        let value = elements[i].value;
+        value.trim();
+        value.toLowerCase();
+        if(value.includes(key)){
+            elements[i].parentElement.setAttribute("style","display:flex");
+        }else{
+            elements[i].parentElement.setAttribute("style","display:none");
+        }
+    }
+}
