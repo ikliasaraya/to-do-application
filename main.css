@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(174,238,212);
+    background: radial-gradient(circle, rgba(174,238,212,1) 19%, rgba(12,114,235,1) 100%);
+    width: 100vw;
+    height: 100vh;
+}
+
+#main-container {
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 30px;
+    width: 50%;
+    height: auto;
+    min-height: fit-content;
+    background: #f0f1f2;
+    border-radius: 50px;
+}
+
+#header-container {
+    margin-bottom: 40px;
+}
+
+#button-clear-list {
+    min-width: fit-content !important;
+}
